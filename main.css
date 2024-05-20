@@ -1,0 +1,1087 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+.menu {
+    background-color: primary-color;
+    font-family: "Baloo 2", cursive;
+  
+    .pic-area {
+      height: 100vh;
+      padding-top: 35vh;
+      overflow: hidden;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+        url("../img/menu-bg.jpg") center top no-repeat;
+      background-size: cover;
+  
+      h1,
+      h2,
+      h3 {
+        font-weight: 400;
+      }
+  
+      h1 {
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+          -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+        font-size: 48px;
+      }
+  
+      h2 {
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+          -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+        font-size: 36px;
+      }
+  
+      h3 {
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+          -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+        font-size: 24px;
+      }
+  
+      .pic-area-text {
+        padding: 1rem;
+        background: rgba(71, 71, 71, 0.2);
+      }
+    }
+  
+    .flex {
+      background-color: hover-color;
+      margin: 1rem auto;
+      padding: 1.5rem;
+      max-width: 1170px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 1.5rem;
+  
+      .box {
+        position: relative;
+        text-align: center;
+  
+        .box__btns {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+          display: grid;
+          align-items: center;
+          text-align: center;
+        }
+  
+        .box__btn {
+          cursor: pointer;
+          font-family: "Baloo 2", cursive;
+          text-decoration: none;
+          outline: none;
+          padding: 0.5rem;
+          margin: 0 3rem;
+          font-size: 1rem;
+          letter-spacing: 1px;
+          background: primary-color;
+          border: 1px solid black-color;
+          color: black-color;
+          opacity: 0;
+          @include transition-ease;
+  
+          &:hover {
+            background: hover-color;
+          }
+        }
+  
+        .img-container {
+          position: relative;
+          border-bottom: 5px solid primary-color;
+          overflow: hidden;
+  
+          img {
+            width: 100%;
+            height: 100%;
+          }
+  
+          &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: secondary-color;
+            opacity: 0;
+            @include transition-ease;
+          }
+  
+          &:hover {
+            &::after {
+              top: 0;
+              opacity: 0.5;
+            }
+            .box__btn {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .home {
+    font-family: "Baloo 2", cursive;
+    .pic-area {
+      height: 100vh;
+      padding-top: 35vh;
+      overflow: hidden;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+        url("../img/home-bg.jpg") center top no-repeat;
+      background-size: cover;
+      font-family: "Marck Script", cursive;
+  
+      h1,
+      h2,
+      h3 {
+        font-weight: 800;
+      }
+  
+      h1 {
+        font-size: 48px;
+      }
+  
+      h2 {
+        font-size: 36px;
+      }
+  
+      h3 {
+        font-size: 24px;
+      }
+  
+      .pic-area-text {
+        padding: 1rem;
+        background: rgba(71, 71, 71, 0.2);
+      }
+  
+      .btn-order {
+        cursor: pointer;
+        font-family: "Baloo 2", cursive;
+        text-decoration: none;
+        outline: none;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        background: primary-color;
+        border: 1px solid black-color;
+        @include transition-ease;
+  
+        &:hover {
+          background: hover-color;
+        }
+      }
+    }
+  
+    .main-area {
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        align-items: center;
+        text-align: center;
+        margin: 10px 20%;
+      }
+  
+      .section-area {
+        .section-A {
+          padding: 3rem 0;
+          color: white;
+          background: hover-color;
+        }
+  
+        .section-B {
+          padding: 3rem 0;
+          color: white;
+          background: primary-color;
+        }
+  
+        .section-C {
+          padding: 3rem 0;
+          color: white;
+          background: secondary-color;
+        }
+  
+        .box {
+          &-img {
+            img {
+              padding: 0 10%;
+              width: 100%;
+              height: auto;
+            }
+          }
+  
+          &-text {
+            position: absolute;
+            margin: 20% 10% 0 10%;
+            background: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  
+    footer {
+      background-color: secondary-color;
+    }
+  }
+  .services {
+    font-family: "Baloo 2", cursive;
+    .pic-area {
+      height: 100vh;
+      padding-top: 35vh;
+      overflow: hidden;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+        url("../img/services-bg.jpg") center top no-repeat;
+      background-size: cover;
+      font-family: "Marck Script", cursive;
+  
+      h1,
+      h2,
+      h3 {
+        font-weight: 800;
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+          -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+      }
+  
+      h1 {
+        font-size: 48px;
+      }
+  
+      h2 {
+        font-size: 36px;
+      }
+  
+      h3 {
+        font-size: 24px;
+      }
+  
+      .pic-area-text {
+        padding: 1rem;
+        background: rgba(71, 71, 71, 0.2);
+      }
+    }
+  
+    .main-area {
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        align-items: center;
+        text-align: center;
+        margin: 10px 20%;
+      }
+  
+      .section-area {
+        .section-A {
+          padding: 3rem 0;
+          color: white;
+          background: hover-color;
+        }
+  
+        .section-B {
+          padding: 3rem 0;
+          color: white;
+          background: primary-color;
+        }
+  
+        .section-C {
+          padding: 3rem 0;
+          color: white;
+          background: secondary-color;
+        }
+  
+        .box {
+          &-img {
+            img {
+              padding: 0 10%;
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+          &-text {
+            position: absolute;
+            margin: 10% 10% 0 10%;
+            background: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  
+    footer {
+      background-color: secondary-color;
+    }
+    .contact {
+        font-family: "Baloo 2", cursive;
+        .pic-area {
+          height: 100vh;
+          padding-top: 35vh;
+          overflow: hidden;
+          align-items: center;
+          text-align: center;
+          background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+            url("../img/contact-bg.jpg") center top no-repeat;
+          background-size: cover;
+          font-family: "Marck Script", cursive;
+          @include transition-ease;
+      
+          h1,
+          h2,
+          h3 {
+            font-weight: 800;
+            text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+              -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+          }
+      
+          h1 {
+            font-size: 48px;
+          }
+      
+          h2 {
+            font-size: 36px;
+          }
+      
+          h3 {
+            font-size: 24px;
+          }
+      
+          .pic-area-text {
+            padding: 1rem;
+            background: rgba(71, 71, 71, 0.2);
+          }
+      
+          .sections {
+            font-family: "Baloo 2", cursive;
+            display: grid;
+            padding: 2rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            font-size: 1.5rem;
+            &-section {
+              background-color: rgba(182, 111, 45, 0.75);
+              padding: 1rem;
+              margin: 1rem;
+            }
+          }
+      
+          .icons {
+            font-size: 2.5rem;
+      
+            a {
+              color: black-color;
+              outline: none;
+              text-decoration: none;
+              margin: 0.5rem;
+              @include transition-ease;
+      
+              &:hover {
+                color: primary-color;
+              }
+            }
+          }
+      
+          .copyright {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-family: "Baloo 2", cursive;
+            color: white;
+          }
+        }
+      }
+      .sign-in {
+        font-family: "Baloo 2", cursive;
+        .pic-area {
+          height: 100vh;
+          padding-top: 35vh;
+          overflow: hidden;
+          align-items: center;
+          text-align: center;
+          background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+            url("../img/sign-in-bg.jpg") center top no-repeat;
+          background-size: cover;
+          font-family: "Marck Script", cursive;
+          @include transition-ease;
+      
+          h1,
+          h2,
+          h3,
+          label {
+            font-weight: 800;
+            text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+              -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+          }
+      
+          label {
+            font-size: 2.5rem;
+          }
+      
+          h1 {
+            font-size: 48px;
+          }
+      
+          h2 {
+            font-size: 36px;
+          }
+      
+          h3 {
+            font-size: 24px;
+          }
+      
+          .pic-area-text {
+            padding: 1rem;
+            background: rgba(71, 71, 71, 0.2);
+          }
+      
+          input {
+            font-family: "Baloo 2", cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            background-color: black-color;
+            color: primary-color;
+            outline: none;
+            border: 1px solid primary-color;
+          }
+      
+          #username-display {
+            font-size: 2rem;
+            margin: 1rem;
+            font-weight: 800;
+            text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+              -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+          }
+      
+          .btn-order {
+            cursor: pointer;
+            font-family: "Baloo 2", cursive;
+            text-decoration: none;
+            outline: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: primary-color;
+            border: 1px solid black-color;
+            @include transition-ease;
+      
+            &:hover {
+              background: hover-color;
+            }
+          }
+      
+          .icons {
+            font-size: 2.5rem;
+            margin-top: 2rem;
+      
+            a {
+              color: black-color;
+              outline: none;
+              text-decoration: none;
+              margin: 0.5rem;
+              @include transition-ease;
+      
+              &:hover {
+                color: primary-color;
+              }
+            }
+          }
+      
+          .copyright {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-family: "Baloo 2", cursive;
+            color: white;
+          }
+        }
+      }
+      .sign-up {
+        font-family: "Baloo 2", cursive;
+        .pic-area {
+          height: 100vh;
+          padding-top: 25vh;
+          overflow: hidden;
+          align-items: center;
+          text-align: center;
+          background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+            url("../img/sign-up-bg.jpg") center top no-repeat;
+          background-size: cover;
+          font-family: "Marck Script", cursive;
+          @include transition-ease;
+      
+          h1,
+          h2,
+          h3,
+          label {
+            font-weight: 800;
+            text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+              -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+          }
+      
+          label {
+            font-size: 2rem;
+          }
+      
+          #login-box {
+            margin: 0 20%;
+          }
+      
+          h1 {
+            font-size: 48px;
+          }
+      
+          h2 {
+            font-size: 36px;
+          }
+      
+          h3 {
+            font-size: 24px;
+          }
+      
+          .pic-area-text {
+            padding: 1rem;
+            background: rgba(71, 71, 71, 0.2);
+          }
+      
+          input {
+            font-family: "Baloo 2", cursive;
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 0.5rem;
+            background-color: black-color;
+            color: primary-color;
+            outline: none;
+            border: 1px solid primary-color;
+          }
+      
+          #username-display {
+            font-size: 2rem;
+            margin: 1rem;
+            font-weight: 800;
+            text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+              -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+          }
+      
+          .btn-order {
+            cursor: pointer;
+            font-family: "Baloo 2", cursive;
+            text-decoration: none;
+            outline: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: primary-color;
+            border: 1px solid black-color;
+            @include transition-ease;
+      
+            &:hover {
+              background: hover-color;
+            }
+          }
+      
+          .icons {
+            font-size: 2.5rem;
+            margin-top: 2rem;
+      
+            a {
+              color: black-color;
+              outline: none;
+              text-decoration: none;
+              margin: 0.5rem;
+              @include transition-ease;
+      
+              &:hover {
+                color: primary-color;
+              }
+            }
+          }
+      
+          .copyright {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-family: "Baloo 2", cursive;
+            color: white;
+          }
+        }
+      }
+      @media screen and (min-width: 768px) {
+  
+      
+        .no-scroll {
+          overflow: auto;
+        }
+      
+        .menu-btn {
+          visibility: hidden;
+        }
+      
+        .second-header {
+          position: fixed;
+          z-index: 2;
+          width: 100%;
+          padding: 1rem;
+          background: black-color;
+          @include transition-ease;
+        }
+      
+        .nav {
+          visibility: visible;
+      
+          .menu-nav {
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            text-align: right;
+      
+            &__item {
+              display: inline;
+            }
+      
+            &__link {
+              font-size: 1.5rem;
+            }
+          }
+      
+          .logo {
+            font-family: "Marck Script", cursive;
+            float: left;
+            font-size: 1.5rem;
+            color: white-color;
+          }
+      
+          .sign-in,
+          .sign-up {
+            font-size: 1rem;
+          }
+      
+          .sign-in {
+            margin-right: 0rem;
+          }
+      
+          .sign-in.active,
+          .sign-up.active {
+            color: primary-color;
+          }
+      
+          #slash {
+            color: white;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+          }
+      
+          ul li {
+            display: inline;
+            font-family: "Baloo 2", cursive;
+          }
+      
+          a {
+            outline: none;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 2rem;
+            text-decoration: none;
+            @include transition-ease;
+      
+            &:hover {
+              color: primary-color;
+            }
+          }
+        }
+        /* End of Navbar Desktop */
+      
+        /* Shopping Cart and View Button*/
+        .cart,
+        .one__view,
+        .two__view,
+        .three__view,
+        .four__view,
+        .five__view,
+        .six__view,
+        .seven__view,
+        .eight__view,
+        .nine__view,
+        .ten__view,
+        .eleven__view,
+        .twelve__view {
+          width: 30vw;
+          min-width: 450px;
+        }
+      }
+      
+      @include media-md {
+        /* Start of Navbar Mobile */
+      
+        .no-scroll {
+          overflow: hidden;
+        }
+      
+        .menu-btn {
+          text-align: left;
+          position: fixed;
+          z-index: 3;
+          right: 1rem;
+          top: 1rem;
+          height: 20px;
+          width: 28px;
+          cursor: pointer;
+          @include transition-ease;
+      
+          &__burger {
+            position: absolute;
+            right: 0;
+            top: 0.5rem;
+            width: 28px;
+            height: 3px;
+            background: white-color;
+            @include transition-ease;
+      
+            &::before {
+              content: "";
+              position: absolute;
+              top: -8px;
+              width: 28px;
+              height: 3px;
+              background: white-color;
+              @include transition-ease;
+            }
+      
+            &::after {
+              content: "";
+              position: absolute;
+              top: 8px;
+              width: 28px;
+              height: 3px;
+              background: $white-color;
+              @include transition-ease;
+            }
+      
+            &.open {
+              transform: rotate(720deg);
+              background: transparent;
+      
+              &::before {
+                transform: rotate(45deg) translate(5px, 8px);
+              }
+      
+              &::after {
+                width: 28px;
+                transform: rotate(-45deg) translate(3px, -7px);
+              }
+            }
+          }
+        }
+      
+        .nav {
+          z-index: 2;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          opacity: 0.98;
+          visibility: hidden;
+      
+          br {
+            display: none;
+          }
+      
+          ul li {
+            display: inline;
+            font-family: "Baloo 2", cursive;
+          }
+      
+          a {
+            outline: none;
+            color: white;
+            font-size: 1.5rem;
+            // margin-right: 2rem;
+            text-decoration: none;
+            @include transition-ease;
+      
+            &:hover {
+              color: $primary-color;
+            }
+          }
+      
+          &.open {
+            visibility: visible;
+          }
+      
+          .menu-nav {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background: $black-color;
+            list-style-type: none;
+            padding-right: 1rem;
+            transform: translateY(-100%);
+            @include transition-ease;
+      
+            &.open {
+              transform: translateY(0);
+            }
+      
+            &__item {
+              transform: translateX(100vw);
+              @include transition-ease;
+      
+              &.open {
+                transform: translateX(0);
+              }
+      
+              &.active > a {
+                color: $primary-color;
+              }
+            }
+      
+            &__link {
+              display: inline-block;
+              text-transform: uppercase;
+              padding: 0.5rem 0;
+              font-weight: 300;
+              @include transition-ease;
+      
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+      
+          .logo {
+            font-family: "Marck Script", cursive;
+            // float: left;
+            font-size: 2rem;
+            color: $white-color;
+            text-transform: none;
+          }
+      
+          .sign-in {
+            margin-right: 0rem;
+          }
+      
+          .sign-in.active,
+          .sign-up.active {
+            color: $primary-color;
+          }
+      
+          #slash {
+            color: white;
+            margin: 0 0.5rem;
+          }
+        }
+      
+        @for $i from 1 through 8 {
+          .menu-nav__item:nth-child(#{$i}) {
+            transition-delay: ($i * 0.1s) + 0.15s;
+          }
+        }
+      
+        /* End of Navbar Mobile */
+      
+        /* Shopping Cart and View Button*/
+        .cart,
+        .one__view,
+        .two__view,
+        .three__view,
+        .four__view,
+        .five__view,
+        .six__view,
+        .seven__view,
+        .eight__view,
+        .nine__view,
+        .ten__view,
+        .eleven__view,
+        .twelve__view {
+          width: 100%;
+        }
+      
+        .contact {
+          .pic-area {
+            padding-top: 20vh;
+            .sections {
+              grid-template-columns: 1fr;
+              &-section {
+                font-size: 1rem;
+                padding: 0;
+                margin: 0;
+              }
+            }
+      
+            .icons {
+              font-size: 1.5rem;
+              display: inline;
+              padding: 0;
+              margin: 0;
+      
+              a {
+                color: $black-color;
+                outline: none;
+                text-decoration: none;
+                margin: 0.5rem;
+                @include transition-ease;
+      
+                &:hover {
+                  color: $primary-color;
+                }
+              }
+            }
+      
+            .copyright {
+              font-size: 0.75rem;
+            }
+          }
+        }
+      
+        // Padding-top lowered in mobile because there is no heading navbar
+        .home,
+        .menu,
+        .services {
+          .pic-area {
+            padding-top: 20vh;
+          }
+        }
+      
+        .contact {
+          .pic-area {
+            padding-top: 10vh;
+          }
+        }
+      
+        .sign-up,
+        .sign-in {
+          .pic-area {
+            // Remove the below if not needed later.
+            // height: 100vh;
+            // padding-top: 35vh;
+            // overflow: hidden;
+      
+            label {
+              font-size: 1.5rem;
+            }
+      
+            .pic-area-text {
+              padding: 0.25rem;
+              background: rgba(71, 71, 71, 0.2);
+            }
+      
+            input {
+              font-size: 1rem;
+              border: 1px solid $primary-color;
+            }
+      
+            #username-display {
+              font-size: 1rem;
+              margin: 0.5rem;
+            }
+      
+            .btn-order {
+              padding: 0.25rem 1rem;
+              font-size: 1rem;
+              letter-spacing: 0.5px;
+            }
+      
+            .icons {
+              font-size: 1.5rem;
+              margin-top: 1rem;
+      
+              a {
+                margin: 0.25rem;
+              }
+            }
+          }
+        }
+      }
+      
+      @include media-lg {
+        .home {
+          .main-area {
+            h1 {
+              font-size: 1rem;
+              margin: 20px;
+            }
+      
+            p {
+              font-size: 0.7rem;
+              margin: 10px 20%;
+            }
+            .section-area {
+              .box {
+                &-text {
+                  position: static;
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+        .services {
+          .main-area {
+            h1 {
+              font-size: 1rem;
+              margin: 20px;
+            }
+      
+            p {
+              font-size: 0.7rem;
+              margin: 10px 20%;
+            }
+            .section-area {
+              .box {
+                &-text {
+                  position: static;
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      @include media-xl {
+      //   .pic-area {
+      //     height: 100vh;
+      //   }
+      // }
+      
